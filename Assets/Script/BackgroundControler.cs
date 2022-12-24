@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameController : MonoBehaviour
+public class BackgroundControler : MonoBehaviour
 {
     [SerializeField] private Transform _player;
     private Vector3 pos;
@@ -10,9 +10,7 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         if(!_player)
-        {
-            _player = FindObjectOfType<Move>().transform;
-        }
+            _player = GetComponent<Transform>();
     }
 
     // Start is called before the first frame update
@@ -24,8 +22,10 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         pos = _player.position;
-        pos.z = -10f;
-        transform.position = Vector3.Lerp(transform.position, pos, Time.deltaTime);
+        pos.z = -10;
+        pos.y = 0;
+        transform.position = Vector3.Lerp(transform.position, pos, Time.deltaTime); ;
     }
 }

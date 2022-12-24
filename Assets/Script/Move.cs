@@ -25,14 +25,20 @@ public class Move : MonoBehaviour
     public enum States
     {
         Stay,
-        Run
+        Run,
+        Junmp
     }
 
     private States State{
         get { return (States)anim.GetInteger("Speed"); }
         set { anim.SetInteger("Speed", (int)value); }
-
     }
+
+   private bool StateJ
+   {
+        get { return anim.GetBool("Jump"); }
+        set { anim.SetBool("Jump", value); }
+   }
 
     public void GetDamage()
     {
@@ -43,7 +49,7 @@ public class Move : MonoBehaviour
 
     private void Run()
     {
-        if(isGrounded)
+        if (isGrounded)
             State = States.Run;
 
         Vector3 dir = transform.right * Input.GetAxis("Horizontal");
@@ -61,8 +67,13 @@ public class Move : MonoBehaviour
 
     private void CheckGround()
     {
-        Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position, 0.8f);
+        Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position, 1f);
         isGrounded = collider.Length > 1;
+
+        if (!isGrounded)
+            StateJ = true;
+        else
+            StateJ = false;
 
     }
 
