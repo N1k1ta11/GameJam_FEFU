@@ -7,7 +7,7 @@ public class Move : MonoBehaviour
     [SerializeField] private float speed = 3f;
     [SerializeField] private int lives = 5;
     [SerializeField] private bool isGrounded;
-    [SerializeField] private float jumpForce = 15f; //сила прыжка
+    [SerializeField] private float jumpForce = 15f; //СЃРёР»Р° РїСЂС‹Р¶РєР°
 
     public static Move Instance { get; set; }
 
