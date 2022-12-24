@@ -13,11 +13,25 @@ public class Move : MonoBehaviour
 
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
+    private Animator anim;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponentInChildren<SpriteRenderer>();
+        anim = GetComponent<Animator>();
+    }
+
+    public enum States
+    {
+        Stay,
+        Run
+    }
+
+    private States State{
+        get { return (States)anim.GetInteger("Speed"); }
+        set { anim.SetInteger("Speed", (int)value); }
+
     }
 
     public void GetDamage()
@@ -26,8 +40,12 @@ public class Move : MonoBehaviour
         Debug.Log(lives);
     }
 
+
     private void Run()
     {
+        if(isGrounded)
+            State = States.Run;
+
         Vector3 dir = transform.right * Input.GetAxis("Horizontal");
         transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
 
@@ -62,6 +80,9 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isGrounded)
+            State = States.Stay;
+
         if (Input.GetButton("Horizontal"))
             Run();
         else if (isGrounded && Input.GetButtonDown("Jump"))
