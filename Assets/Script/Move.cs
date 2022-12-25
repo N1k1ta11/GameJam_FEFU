@@ -13,11 +13,32 @@ public class Move : MonoBehaviour
 
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
+    private Animator anim;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponentInChildren<SpriteRenderer>();
+        anim = GetComponent<Animator>();
+    }
+
+    public enum States
+    {
+        Stay,
+        Run,
+        Junmp
+    }
+
+    private States State
+    {
+        get { return (States)anim.GetInteger("Speed"); }
+        set { anim.SetInteger("Speed", (int)value); }
+    }
+
+    private bool StateJ
+    {
+        get { return anim.GetBool("Jump"); }
+        set { anim.SetBool("Jump", value); }
     }
 
     public void GetDamage()
@@ -26,8 +47,12 @@ public class Move : MonoBehaviour
         Debug.Log(lives);
     }
 
+
     private void Run()
     {
+        if (isGrounded)
+            State = States.Run;
+
         Vector3 dir = transform.right * Input.GetAxis("Horizontal");
         transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
 
@@ -36,15 +61,18 @@ public class Move : MonoBehaviour
 
     private void Jump()
     {
-        // Vector3 dir = transform.up * Input.GetAxis("Jump");
-        //transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, jumpForce);
         rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
     }
 
     private void CheckGround()
     {
-        Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position, 0.8f);
+        Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position, 1f);
         isGrounded = collider.Length > 1;
+
+        if (!isGrounded)
+            StateJ = true;
+        else
+            StateJ = false;
 
     }
 
@@ -56,12 +84,15 @@ public class Move : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isGrounded)
+            State = States.Stay;
+
         if (Input.GetButton("Horizontal"))
             Run();
         else if (isGrounded && Input.GetButtonDown("Jump"))
