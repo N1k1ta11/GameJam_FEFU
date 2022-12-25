@@ -7,7 +7,9 @@ public class Move : MonoBehaviour
     [SerializeField] private float speed = 3f;
     [SerializeField] private int lives = 5;
     [SerializeField] private bool isGrounded;
-    [SerializeField] private float jumpForce = 15f; //ÒËÎ‡ Ô˚ÊÍ‡
+    [SerializeField] private float jumpForce = 15f; //—Å–∏–ª–∞ –ø—Ä—ã–∂–∫–∞
+
+    public static Move Instance { get; set; }
 
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
@@ -16,6 +18,12 @@ public class Move : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponentInChildren<SpriteRenderer>();
+    }
+
+    public void GetDamage()
+    {
+        lives -= 1;
+        Debug.Log(lives);
     }
 
     private void Run()
