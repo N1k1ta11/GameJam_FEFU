@@ -11,7 +11,7 @@ public class Triger : MonoBehaviour
     {
         float distToPlayer = Vector2.Distance(transform.position, player.position);
         Debug.Log("Distance = "+distToPlayer);
-        if(distToPlayer <2)
+        if((int)distToPlayer <= 2)
         {
             SceneManager.LoadScene(scenNum+1);
         }

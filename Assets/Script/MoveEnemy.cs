@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Resources;
 using UnityEngine;
 
 
@@ -14,10 +15,10 @@ public class MoveEnemy : MonoBehaviour
     private float agroDistance = 0;
     public float activeDist;
 
-    private bool State
+    private bool stad
     {
-        get { return anim.GetBool("isDeath"); }
-        set { anim.SetBool("isDeath", value); }
+        get { return anim.GetBool("WALK"); }
+        set { anim.SetBool("WALK", value); }
     }
 
     // Start is called before the first frame update
@@ -30,15 +31,17 @@ public class MoveEnemy : MonoBehaviour
 
     private void StartHunting()
     {
-        if (player.position.x < transform.position.x)
+        
+        if (player.position.x < transform.position.x && ((int)player.position.y == (int)transform.position.y+2 || (int)player.position.y == (int)transform.position.y))
         {
-            
+            stad = true;
             Vector3 dir = transform.right * (-1);
             transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
             sprite.flipX = true;
         }
-        else if (player.position.x > transform.position.x)
+        else if (player.position.x > transform.position.x && ((int)player.position.y == (int)transform.position.y + 2 || (int)player.position.y == (int)transform.position.y))
         {
+            stad = true;
             Vector3 dir = transform.right;
             transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
             sprite.flipX = false;
@@ -47,7 +50,8 @@ public class MoveEnemy : MonoBehaviour
 
     private void StopHunting()
     {
-        physic.velocity = new Vector2(0, 0);
+        stad = false;
+        physic.velocity = new Vector2(0, 0); //Xyenzov
     }
 
     // Update is called once per frame
@@ -56,6 +60,7 @@ public class MoveEnemy : MonoBehaviour
         float distToPlayer = Vector2.Distance(transform.position, player.position);
         if (distToPlayer > agroDistance && distToPlayer < activeDist)
         {
+            
             StartHunting();
             
         }

@@ -25,9 +25,10 @@ public class Move : MonoBehaviour
     public enum States
     {
         Stay,
-        Run,
-        Junmp
+        Run
     }
+
+    public bool dance;
 
     private States State
     {
@@ -85,12 +86,16 @@ public class Move : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if (dance)
+        {
+            anim.SetBool("Dance", dance);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (isGrounded)
             State = States.Stay;
 
@@ -98,5 +103,6 @@ public class Move : MonoBehaviour
             Run();
         else if (isGrounded && Input.GetButtonDown("Jump"))
             Jump();
+
     }
 }
