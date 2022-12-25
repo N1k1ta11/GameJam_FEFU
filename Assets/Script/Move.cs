@@ -60,8 +60,6 @@ public class Move : MonoBehaviour
 
     private void Jump()
     {
-        // Vector3 dir = transform.up * Input.GetAxis("Jump");
-        //transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, jumpForce);
         rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
     }
 

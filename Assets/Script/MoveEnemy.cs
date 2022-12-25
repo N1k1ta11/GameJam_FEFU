@@ -20,16 +20,18 @@ public class MoveEnemy : MonoBehaviour
 
     private void StartHunting()
     {
-        if(player.position.x < transform.position.x) { //бот пойдёт влево
-            physic.velocity = new Vector2(-speed, 0);
-            //transform.localScale = new Vector2((float)0.040168, (float)0.1713982);
+       if(player.position.x < transform.position.x) { //бот пойдёт влево
+            Vector3 dir = transform.right*(-1);
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
+            //physic.velocity = new Vector2(-speed, 0);
             sprite.flipX = true;
         }
         else if(player.position.x > transform.position.x)
         {
-            physic.velocity = new Vector2(speed, 0);
+            Vector3 dir = transform.right;
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
+            //physic.velocity = new Vector2(speed, 0);
             sprite.flipX = false;
-            //transform.localScale = new Vector2((float)-0.040168, (float)0.1713982);
         }
     }
 
