@@ -152,12 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61697ceac8c0dcd43a74e4407ceb798b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  _player: {fileID: 1102841489}
-=======
-  cam: {fileID: 1356993865}
-  player: {fileID: 1102841488}
->>>>>>> 7b14d062293566d953a11784857bc334a00192db
+  _player: {fileID: 0}
 --- !u!4 &282159642
 Transform:
   m_ObjectHideFlags: 0
@@ -185,10 +180,6 @@ GameObject:
   - component: {fileID: 314275284}
   - component: {fileID: 314275283}
   - component: {fileID: 314275282}
-<<<<<<< HEAD
-  - component: {fileID: 314275286}
-=======
->>>>>>> 7b14d062293566d953a11784857bc334a00192db
   m_Layer: 0
   m_Name: Enemy (1)
   m_TagString: Untagged
@@ -310,24 +301,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
---- !u!114 &314275286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 314275281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cef3bafd98a8aea4dac006a190c3c3d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1102841489}
-  speed: 2
-  agroDistance: 0
-=======
->>>>>>> 7b14d062293566d953a11784857bc334a00192db
 --- !u!1 &376005927
 GameObject:
   m_ObjectHideFlags: 0
@@ -3566,10 +3539,6 @@ GameObject:
   - component: {fileID: 998626023}
   - component: {fileID: 998626022}
   - component: {fileID: 998626021}
-<<<<<<< HEAD
-  - component: {fileID: 998626024}
-=======
->>>>>>> 7b14d062293566d953a11784857bc334a00192db
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -3691,24 +3660,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-<<<<<<< HEAD
---- !u!114 &998626024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 998626019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cef3bafd98a8aea4dac006a190c3c3d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1102841489}
-  speed: 2
-  agroDistance: 0
-=======
->>>>>>> 7b14d062293566d953a11784857bc334a00192db
 --- !u!1 &1102841488
 GameObject:
   m_ObjectHideFlags: 0
@@ -3946,11 +3897,7 @@ SpriteRenderer:
   m_Size: {x: 1.71, y: 1.67}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-<<<<<<< HEAD
   m_WasSpriteAssigned: 0
-=======
-  m_WasSpriteAssigned: 1
->>>>>>> 7b14d062293566d953a11784857bc334a00192db
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1154347333
@@ -4123,10 +4070,7 @@ GameObject:
   - component: {fileID: 1356993866}
   - component: {fileID: 1356993865}
   - component: {fileID: 1356993864}
-<<<<<<< HEAD
   - component: {fileID: 1356993867}
-=======
->>>>>>> 7b14d062293566d953a11784857bc334a00192db
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4200,7 +4144,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
 --- !u!114 &1356993867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4214,8 +4157,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1102841489}
-=======
->>>>>>> 7b14d062293566d953a11784857bc334a00192db
 --- !u!1 &2039062489
 GameObject:
   m_ObjectHideFlags: 0
@@ -4228,10 +4169,6 @@ GameObject:
   - component: {fileID: 2039062492}
   - component: {fileID: 2039062491}
   - component: {fileID: 2039062490}
-<<<<<<< HEAD
-  - component: {fileID: 2039062494}
-=======
->>>>>>> 7b14d062293566d953a11784857bc334a00192db
   m_Layer: 0
   m_Name: Enemy (2)
   m_TagString: Untagged
@@ -4353,21 +4290,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
---- !u!114 &2039062494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2039062489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cef3bafd98a8aea4dac006a190c3c3d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1102841489}
-  speed: 2
-  agroDistance: 0
-=======
->>>>>>> 7b14d062293566d953a11784857bc334a00192db
