@@ -8,33 +8,40 @@ public class MoveEnemy : MonoBehaviour
     private Rigidbody2D physic;
     public Transform player;
     private SpriteRenderer sprite;
+    private Animator anim;
 
     public float speed;
     private float agroDistance = 0;
     public float activeDist;
 
-
+    private bool State
+    {
+        get { return anim.GetBool("isDeath"); }
+        set { anim.SetBool("isDeath", value); }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         sprite = GetComponentInChildren<SpriteRenderer>();
         physic = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void StartHunting()
     {
         if (player.position.x < transform.position.x)
         {
+            
             Vector3 dir = transform.right * (-1);
             transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
-            sprite.flipX = false;
+            sprite.flipX = true;
         }
         else if (player.position.x > transform.position.x)
         {
             Vector3 dir = transform.right;
             transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
-            sprite.flipX = true;
+            sprite.flipX = false;
         }
     }
 
@@ -50,6 +57,7 @@ public class MoveEnemy : MonoBehaviour
         if (distToPlayer > agroDistance && distToPlayer < activeDist)
         {
             StartHunting();
+            
         }
         else
         {

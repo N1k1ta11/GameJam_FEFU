@@ -7,6 +7,7 @@ public class Scen : MonoBehaviour
 {
     public void LoadScene(int sceneid)
     {
+        Debug.Log("Ты нажал");
         SceneManager.LoadScene(sceneid);
     }
     // Start is called before the first frame update
