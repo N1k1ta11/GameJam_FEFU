@@ -10,6 +10,12 @@ public class Scen : MonoBehaviour
         Debug.Log("Ты нажал");
         SceneManager.LoadScene(sceneid);
     }
+
+    public void QuitGame()
+    {
+        Debug.Log("Exit");
+        Application.Quit();
+    }
     // Start is called before the first frame update
     void Start()
     {
