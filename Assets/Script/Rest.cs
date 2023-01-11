@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Rest : MonoBehaviour
 {
-    public int numScen;
+    private int numScen;
     private bool ok=true;
     private void CheckDie()
     {
@@ -22,7 +22,7 @@ public class Rest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        numScen = SceneManager.GetActiveScene().buildIndex;
     }
 
     // Update is called once per frame
