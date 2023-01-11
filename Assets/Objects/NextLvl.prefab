@@ -125,4 +125,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenNum: 5
-  player: {fileID: 0}
+  player: {fileID: 8607685243027130213, guid: 7ea49788db9d0da459bc66b984595244, type: 3}
