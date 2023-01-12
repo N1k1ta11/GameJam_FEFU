@@ -12,7 +12,7 @@ public class MoveEnemy : MonoBehaviour
     private Animator anim;
 
     public float speed;
-    private float agroDistance = 0;
+    //private float agroDistance = 0;
     public float activeDist;
 
     private bool stad
@@ -58,7 +58,7 @@ public class MoveEnemy : MonoBehaviour
     void Update()
     {
         float distToPlayer = Vector2.Distance(transform.position, player.position);
-        if (distToPlayer > agroDistance && distToPlayer < activeDist)
+        if (distToPlayer < activeDist)
         {
             
             StartHunting();

@@ -42,12 +42,6 @@ public class Move : MonoBehaviour
         set { anim.SetBool("Jump", value); }
     }
 
-    public void GetDamage()
-    {
-        lives -= 1;
-        Debug.Log(lives);
-    }
-
 
     private void Run()
     {
@@ -69,6 +63,7 @@ public class Move : MonoBehaviour
     private void CheckGround()
     {
         Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position, 1f);
+        //Debug.Log("Lenght =" + collider.Length);
         isGrounded = collider.Length > 1;
 
         if (!isGrounded)
@@ -77,7 +72,6 @@ public class Move : MonoBehaviour
             StateJ = false;
 
     }
-
     private void FixedUpdate()
     {
         CheckGround();
@@ -102,7 +96,10 @@ public class Move : MonoBehaviour
         if (Input.GetButton("Horizontal"))
             Run();
         else if (isGrounded && Input.GetButtonDown("Jump"))
+        {
             Jump();
+            isGrounded= false;
+        }
 
     }
 }
