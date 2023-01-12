@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour
     void Update()
     {
         pos = _player.position;
-        pos.z = -10f;
-        transform.position = Vector3.Lerp(transform.position, pos, Time.deltaTime);
+        pos.z = -8f;
+        transform.position = Vector3.Lerp(transform.position, pos, Time.deltaTime+1);
     }
 }
