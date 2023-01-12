@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1046227074270494281}
   m_Layer: 0
   m_Name: MainPerson
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +114,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.6}
+  m_Size: {x: 0.82, y: 1.51}
   m_EdgeRadius: 0
 --- !u!50 &8607685243027130214
 Rigidbody2D:
@@ -149,10 +149,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810d3ddc4765c45469fd696c4b21d00a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 5
   lives: 5
   isGrounded: 0
-  jumpForce: 15
+  jumpForce: 16
   dance: 0
 --- !u!95 &8607685243027130210
 Animator:

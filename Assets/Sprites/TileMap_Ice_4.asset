@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TileMap_Ice_4
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: -1913586340, guid: a170ed05a37ebed449b64279d0c1284f, type: 3}
-  m_Color: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
+  m_Color: {r: 0.2784314, g: 0.2784314, b: 0.2784314, a: 1}
   m_Transform:
     e00: 1
     e01: 0

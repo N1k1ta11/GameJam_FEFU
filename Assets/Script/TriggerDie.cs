@@ -13,6 +13,10 @@ public class TriggerDie : MonoBehaviour
         {
             SceneManager.LoadScene(scenNum);
         }
+        if (collision.CompareTag("Wolf") || collision.CompareTag("Block"))
+        {
+            Destroy(collision.gameObject);
+        }
     }
     void Start()
     {
