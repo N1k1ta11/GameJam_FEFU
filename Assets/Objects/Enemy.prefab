@@ -169,8 +169,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8607685243027130213, guid: 7ea49788db9d0da459bc66b984595244, type: 3}
-  speed: 2
-  activeDist: 6
+  speed: 1.5
+  activeDist: 4
 --- !u!1 &5931980489831112306
 GameObject:
   m_ObjectHideFlags: 0

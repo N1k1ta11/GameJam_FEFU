@@ -386,6 +386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
+  smoothing: 0
 --- !u!4 &282159642
 Transform:
   m_ObjectHideFlags: 0
@@ -2171,6 +2172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
+  smoothing: 5.03
 --- !u!1 &1400552875
 GameObject:
   m_ObjectHideFlags: 0
