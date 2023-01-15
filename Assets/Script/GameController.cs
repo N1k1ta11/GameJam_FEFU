@@ -6,6 +6,7 @@ public class GameController : MonoBehaviour
 {
     [SerializeField] private Transform _player;
     private Vector3 pos;
+    public float smoothing;
 
     private void Awake()
     {
@@ -24,7 +25,7 @@ public class GameController : MonoBehaviour
     void Update()
     {
         pos = _player.position;
-        pos.z = -8f;
-        transform.position = Vector3.Lerp(transform.position, pos, Time.deltaTime+1);
+        pos.z = -10f;
+        transform.position = Vector3.Lerp(transform.position, pos, smoothing * Time.deltaTime);
     }
 }

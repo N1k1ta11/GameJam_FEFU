@@ -8,11 +8,19 @@ public class ButtonActive : MonoBehaviour
 
     public GameObject wall;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if(collision.CompareTag("Block"))
         {
-            Destroy(wall);
+            wall.SetActive(false);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Block"))
+        {
+            wall.SetActive(true);
         }
     }
 
